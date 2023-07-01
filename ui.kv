@@ -1,0 +1,21 @@
+<Demo>:
+	Screen:
+		name: "screen1"
+		MDLabel:
+			text: "screen 1"
+			halign :"center"
+
+		MDRaisedButton:
+			text: "Go to screen 2"
+			pos_hint: {"center_x": .5, "center_y": .4}
+			on_release: root.current = "screen2"
+
+	Screen:
+		name: "screen2"
+		MDLabel:
+			text: "screen 2"
+			halign :"centen"
+		MDRaisedButton:
+			text: "Go to screen
+			pos_hint: {"center_x": .5, "center_y": .4}
+			on_release: root.current="screen1"
