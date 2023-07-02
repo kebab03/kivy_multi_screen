@@ -1,0 +1,29 @@
+<DemoProject>:
+    Screen:
+        name: "screen_1"
+        MDLabel:
+            id: scrn1
+            text: "Hello World"
+            halign: "center"
+
+        MDRaisedButton:
+            text: "press me"
+            on_release: root.ids.scrn1.text = root.ids.scrn2.text
+            pos_hint: {"center_x": .5,"center_y": .3}
+
+        MDRaisedButton:
+            text: "next screen"
+            pos_hint: {"center_x": .5, "center_y": .8}
+            on_release: root.print_msg(root)
+
+    Screen:
+        name: "screen_2"
+        MDLabel:
+            id: scrn2
+            text: "Hello world form screen 2"
+            halign: "center"
+        MDRaisedButton:
+            text: "previous screen"
+            pos_hint: {"center_x": .5, "center_y": .8}
+            on_release: root.current = "screen_1"
+
