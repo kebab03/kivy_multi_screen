@@ -1,0 +1,41 @@
+<Content>:
+    ScrollView:
+        MDList:
+            OneLineListItem:
+                text: "Go to Screen 1"
+                on_release:
+                    root.nav_drawer.set_state("close")
+                    root.manager.current="screen1"
+
+            OneLineListItem:
+                text: "Go to Screen 2"
+                on_release:
+                    root.nav_drawer.set_state("close")
+                    root.manager.current="screen2"
+
+<Demo>:
+    Screen:
+        MDToolbar:
+            pos_hint: {"top":1}
+            title: "Navigation Drawer"
+            elevation: 8
+            left_action_items:[["menu", lambda x :nav_drawer.set_state("open")]]
+        MDNavigationDrawer:
+            id:nav_drawer
+            Content:
+                manager: screen_manager
+                nav_drawer:nav_drawer
+        MDNavigationLayout:
+            ScreenManager:
+                id: screen_manager
+                Screen:
+                    name: "screen1"
+                    MDLabel:
+                        text : "This is Screen 1 "
+                        halign :"center"
+
+                Screen:
+                    name: "screen2"
+                    MDLabel:
+                        text : "This is Screen 2 "
+                        halign :"center"
